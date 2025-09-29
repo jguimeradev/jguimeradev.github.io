@@ -5,4 +5,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
     site: 'https://jguimeram.github.io/',
     outDir: './docs',
+    build: {
+        assets: 'assets'
+    }
 });
