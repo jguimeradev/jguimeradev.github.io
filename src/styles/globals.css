@@ -1,0 +1,45 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b0f14;
+  /* fondo */
+  --panel: #0f141a;
+  /* panel superior */
+  --fg: #e6edf3;
+  /* texto principal */
+  --muted: #8b949e;
+  /* texto tenue */
+  --accent: #58a6ff;
+  /* azul */
+  --success: #3fb950;
+  /* verde */
+  --warning: #d29922;
+  /* amarillo */
+  --error: #f85149;
+  /* rojo */
+  --cursor: #c9d1d9;
+  /* cursor */
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Fira Mono", "DejaVu Sans Mono", monospace;
+  --radius: 10px;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+html,
+body {
+  height: 100%;
+  background: linear-gradient(180deg, #0a0d12, #0b0f14 35%, #0b0f14);
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}

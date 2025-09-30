@@ -1,0 +1,119 @@
+<div class="frame">
+  <div class="titlebar" aria-hidden="true">
+    <div class="dots">
+      <span class="dot red"></span><span class="dot yellow"></span><span
+        class="dot green"></span>
+    </div>
+    <div class="title">jguimeram - My personal blog</div>
+  </div>
+  <div class="terminal">
+    <div class="menu">
+      <ul>
+        <li>
+          <span class="cursor">Proyectos </span>
+          <li>Blog</li>
+          <li>Snake</li>
+          <li>About</li>
+        </li>
+      </ul>
+    </div>
+    <div class="screen">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
+      similique mollitia esse praesentium, dolore nesciunt animi eum vel numquam
+      sunt voluptatem iure minus corrupti? Iste doloribus nobis recusandae quam!
+    </div>
+  </div>
+</div>
+
+<style>
+  .frame {
+    width: min(960px, 96vw);
+    height: min(560px, 80vh);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--bg);
+    border: 1px solid #11161d;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    color: var(--success);
+  }
+
+  /* terminal top bar */
+
+  .titlebar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 36px;
+    padding: 0 12px;
+    background: var(--panel);
+    border-bottom: 1px solid #0b1117;
+    user-select: none;
+  }
+
+  .dots {
+    display: flex;
+    gap: 8px;
+    margin-right: 6px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .dot.red {
+    background: #ff5f56;
+  }
+
+  .dot.yellow {
+    background: #ffbd2e;
+  }
+
+  .dot.green {
+    background: #27c93f;
+  }
+
+  .title {
+    color: var(--muted);
+    font: 500 12px/1 var(--mono);
+    letter-spacing: 0.2px;
+  }
+
+  .terminal {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 16px 16px 28px;
+    color: var(--success);
+    font: 2rem var(--mono);
+    background: radial-gradient(
+        1200px 400px at 50% 0%,
+        rgba(88, 166, 255, 0.06),
+        transparent 60%
+      ),
+      var(--bg);
+    height: 100%;
+  }
+
+  .menu ul li {
+    padding: 5px;
+    list-style-type: none;
+  }
+
+  .menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+  }
+
+  .screen {
+    padding: 5px;
+  }
+
+  .cursor::before {
+    content: "> ";
+  }
+</style>
