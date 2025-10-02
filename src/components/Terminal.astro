@@ -1,3 +1,7 @@
+---
+import { MenuList } from "../scripts/selector.ts";
+---
+
 <div class="frame">
   <div class="titlebar" aria-hidden="true">
     <div class="dots">
@@ -9,12 +13,11 @@
   <div class="terminal">
     <div class="menu">
       <ul>
-        <li>
-          <span class="cursor">Proyectos</span>
-          <li>Blog</li>
-          <li>Snake</li>
-          <li>About</li>
-        </li>
+        {
+          MenuList.map((item, id) => (
+            <li data-id={item.id.toString()}>{item.name}</li>
+          ))
+        }
       </ul>
     </div>
     <div class="screen">
