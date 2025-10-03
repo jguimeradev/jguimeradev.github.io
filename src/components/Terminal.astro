@@ -143,27 +143,38 @@ import { MenuList } from "../scripts/selector.ts";
 
   .cursor::before {
     content: "> ";
+    width: 35px;
+    height: 35px;
   }
 </style>
 
-<script>
-  const options = document.querySelectorAll(".menu li") as NodeListOf<Element>;
-  const cursor = document.createElement("span") as HTMLSpanElement;
+<script is:inline>
+  const options = document.querySelectorAll(".menu-option li");
+  const cursor = document.createElement("span");
   cursor.classList.add("cursor");
 
-  let currentIndex: number = 0;
-  options[currentIndex].insertBefore(cursor, options[currentIndex].firstChild);
+  let currentIndex = 0;
+  //set cursor on the first item
+  console.log(
+    options[currentIndex].insertBefore(
+      cursor,
+      options[currentIndex].firstChild,
+    ),
+  );
 
-  document.addEventListener("keydown", (e: KeyboardEvent) => {
-    console.log(e);
+  document.addEventListener("keydown", (e) => {
     if (e.key === "ArrowDown") {
-      currentIndex++;
+      ++currentIndex;
     } else if (e.key === "ArrowUp") {
-      currentIndex--;
+      --currentIndex;
     } else if (e.key === "Enter") {
-      const id: string | null = options[currentIndex].getAttribute("data-id");
-      if (id === null) console.log("no id");
+      const id = options[currentIndex].getAttribute("data-id");
+      console.log(id);
     }
+
+    if (currentIndex === options.length) currentIndex = 0;
+    if (currentIndex < 0) currentIndex = options.length - 1;
+
     options[currentIndex].insertBefore(
       cursor,
       options[currentIndex].firstChild,
