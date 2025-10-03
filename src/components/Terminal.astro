@@ -12,7 +12,7 @@ import { MenuList } from "../scripts/selector.ts";
   </div>
   <div class="terminal">
     <div class="menu">
-      <ul>
+      <ul class="menu-option">
         {
           MenuList.map((item, id) => (
             <li data-id={item.id.toString()}>{item.name}</li>
@@ -21,9 +21,30 @@ import { MenuList } from "../scripts/selector.ts";
       </ul>
     </div>
     <div class="screen">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
-      similique mollitia esse praesentium, dolore nesciunt animi eum vel numquam
-      sunt voluptatem iure minus corrupti? Iste doloribus nobis recusandae quam!
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
+        similique mollitia esse praesentium, dolore nesciunt animi eum vel
+        numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
+        recusandae quam!
+      </div>
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
+        similique mollitia esse praesentium, dolore nesciunt animi eum vel
+        numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
+        recusandae quam!
+      </div>
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
+        similique mollitia esse praesentium, dolore nesciunt animi eum vel
+        numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
+        recusandae quam!
+      </div>
+      <div class="content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
+        similique mollitia esse praesentium, dolore nesciunt animi eum vel
+        numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
+        recusandae quam!
+      </div>
     </div>
   </div>
 </div>
@@ -116,7 +137,36 @@ import { MenuList } from "../scripts/selector.ts";
     padding: 5px;
   }
 
+  .content {
+    display: none;
+  }
+
   .cursor::before {
     content: "> ";
   }
 </style>
+
+<script>
+  const options = document.querySelectorAll(".menu li") as NodeListOf<Element>;
+  const cursor = document.createElement("span") as HTMLSpanElement;
+  cursor.classList.add("cursor");
+
+  let currentIndex: number = 0;
+  options[currentIndex].insertBefore(cursor, options[currentIndex].firstChild);
+
+  document.addEventListener("keydown", (e: KeyboardEvent) => {
+    console.log(e);
+    if (e.key === "ArrowDown") {
+      currentIndex++;
+    } else if (e.key === "ArrowUp") {
+      currentIndex--;
+    } else if (e.key === "Enter") {
+      const id: string | null = options[currentIndex].getAttribute("data-id");
+      if (id === null) console.log("no id");
+    }
+    options[currentIndex].insertBefore(
+      cursor,
+      options[currentIndex].firstChild,
+    );
+  });
+</script>

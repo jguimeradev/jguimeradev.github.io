@@ -2,16 +2,21 @@ type Menu = { name: string, id: number }
 
 export const MenuList: Array<Menu> = [
     {
-        name: "blog",
+        name: "Proyectos",
+        id: 0
+    },
+    {
+        name: "Blog",
         id: 1
     },
     {
-        name: "snake",
+        name: "Snake",
         id: 2
     },
     {
-        name: "About",
+        name: "About Me",
         id: 3
     }
 
 ]
+
