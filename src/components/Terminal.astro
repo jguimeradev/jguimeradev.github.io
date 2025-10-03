@@ -1,5 +1,5 @@
 ---
-import { MenuList } from "../scripts/selector.ts";
+import { MenuList } from "../scripts/types.ts";
 ---
 
 <div class="frame">
@@ -21,25 +21,25 @@ import { MenuList } from "../scripts/selector.ts";
       </ul>
     </div>
     <div class="screen">
-      <div class="content">
+      <div class="content" data-id="0">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
         similique mollitia esse praesentium, dolore nesciunt animi eum vel
         numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
         recusandae quam!
       </div>
-      <div class="content">
+      <div class="content" data-id="1">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
         similique mollitia esse praesentium, dolore nesciunt animi eum vel
         numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
         recusandae quam!
       </div>
-      <div class="content">
+      <div class="content" data-id="2">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
         similique mollitia esse praesentium, dolore nesciunt animi eum vel
         numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
         recusandae quam!
       </div>
-      <div class="content">
+      <div class="content" data-id="3">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
         similique mollitia esse praesentium, dolore nesciunt animi eum vel
         numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
@@ -148,36 +148,4 @@ import { MenuList } from "../scripts/selector.ts";
   }
 </style>
 
-<script is:inline>
-  const options = document.querySelectorAll(".menu-option li");
-  const cursor = document.createElement("span");
-  cursor.classList.add("cursor");
-
-  let currentIndex = 0;
-  //set cursor on the first item
-  console.log(
-    options[currentIndex].insertBefore(
-      cursor,
-      options[currentIndex].firstChild,
-    ),
-  );
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowDown") {
-      ++currentIndex;
-    } else if (e.key === "ArrowUp") {
-      --currentIndex;
-    } else if (e.key === "Enter") {
-      const id = options[currentIndex].getAttribute("data-id");
-      console.log(id);
-    }
-
-    if (currentIndex === options.length) currentIndex = 0;
-    if (currentIndex < 0) currentIndex = options.length - 1;
-
-    options[currentIndex].insertBefore(
-      cursor,
-      options[currentIndex].firstChild,
-    );
-  });
-</script>
+<script src="../scripts/script.ts"></script>
