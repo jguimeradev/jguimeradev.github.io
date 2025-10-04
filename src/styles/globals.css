@@ -49,3 +49,12 @@ body {
   width: 35px;
   height: 35px;
 }
+
+.content{
+  display: none;
+}
+
+.display {
+    display: block;
+  }
+
