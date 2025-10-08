@@ -10,10 +10,17 @@ class TerminalMenu {
         this.contents = Array.from(document.querySelectorAll<HTMLDivElement>('.content'));
         this.cursor = document.createElement("span");
         this.cursor.classList.add("cursor");
-        this.currentIndex = 0;
         
-        // Bind the event handler to maintain proper 'this' context
+        // Initialize with current pathname or default to proyectos
+        const currentPath = window.location.pathname.split('/').pop() || 'proyectos';
+        this.currentIndex = this.options.findIndex(option => 
+            option.getAttribute('data-url') === currentPath
+        );
+        if (this.currentIndex === -1) this.currentIndex = 0;
+        
+        // Bind the handlers
         this.keydownHandler = this.handleKeydown.bind(this);
+        this.handleHashChange = this.handleHashChange.bind(this);
         
         this.init();
     }
@@ -22,9 +29,11 @@ class TerminalMenu {
         // Set initial state
         this.updateCursorPosition();
         this.updateContentVisibility();
+        this.updateURL();
         
-        // Add event listener
+        // Add event listeners
         document.addEventListener("keydown", this.keydownHandler);
+        window.addEventListener("hashchange", this.handleHashChange);
     }
 
     private handleKeydown(e: KeyboardEvent): void {
@@ -69,14 +78,15 @@ class TerminalMenu {
     }
 
     private selectCurrentOption(): void {
-        const selectedId = this.options[this.currentIndex].getAttribute("data-id");
-        this.updateContentVisibility(selectedId);
+        const selectedUrl = this.options[this.currentIndex].getAttribute("data-url");
+        this.updateContentVisibility(selectedUrl);
+        this.updateURL();
     }
 
-    private updateContentVisibility(selectedId: string | null = "0"): void {
+    private updateContentVisibility(selectedUrl: string | null = "proyectos"): void {
         this.contents.forEach(content => {
-            const contentId = content.getAttribute('data-id');
-            if (contentId === selectedId) {
+            const contentUrl = content.getAttribute('data-url');
+            if (contentUrl === selectedUrl) {
                 content.classList.add('active');
             } else {
                 content.classList.remove('active');
@@ -84,9 +94,30 @@ class TerminalMenu {
         });
     }
 
+    private updateURL(): void {
+        const selectedUrl = this.options[this.currentIndex].getAttribute("data-url");
+        const url = new URL(window.location.href);
+        url.pathname = selectedUrl || "";
+        window.history.pushState({}, '', url.toString());
+    }
+
+    private handleHashChange(): void {
+        const path = window.location.pathname.split('/').pop() || 'proyectos';
+        const newIndex = this.options.findIndex(option => 
+            option.getAttribute('data-url') === path
+        );
+        
+        if (newIndex !== -1 && newIndex !== this.currentIndex) {
+            this.currentIndex = newIndex;
+            this.updateCursorPosition();
+            this.updateContentVisibility();
+        }
+    }
+
     public destroy(): void {
-        // Clean up event listeners when needed
+        // Clean up event listeners
         document.removeEventListener("keydown", this.keydownHandler);
+        window.removeEventListener("hashchange", this.handleHashChange);
     }
 }
 

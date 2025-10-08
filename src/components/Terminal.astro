@@ -1,31 +1,22 @@
 ---
-import { fade } from "astro:transitions";
-import { type Menu } from "../scripts/types.ts";
-const MenuList: Array<Menu> = [
-  {
-    name: "Proyectos",
-    id: 0,
-    content: ``,
-  },
-  {
-    name: "Blog",
-    id: 1,
-    content: ``,
-  },
-  {
-    name: "Snake",
-    id: 2,
-    content: ``,
-  },
-  {
-    name: "About Me",
-    id: 3,
-    content: ``,
-  },
-];
+import { MenuList } from "../scripts/types.ts";
+import Proyectos from "../pages/proyectos/index.astro";
+import Blog from "../pages/blog/index.astro";
+import Snake from "../pages/snake/index.astro";
+import AboutMe from "../pages/about-me/index.astro";
+
+type PageComponent = typeof Proyectos;
+type Pages = Record<string, PageComponent>;
+
+const components: Pages = {
+  proyectos: Proyectos,
+  blog: Blog,
+  snake: Snake,
+  "about-me": AboutMe,
+};
 ---
 
-<div class="frame" }>
+<div class="frame">
   <div class="titlebar" aria-hidden="true">
     <div class="dots">
       <span class="dot red"></span><span class="dot yellow"></span><span
@@ -36,20 +27,23 @@ const MenuList: Array<Menu> = [
   <div class="terminal">
     <div class="menu">
       <ul class="menu-option">
-        {
-          MenuList.map((item, id) => (
-            <li data-id={item.id.toString()}>{item.name}</li>
-          ))
-        }
+        {MenuList.map((item) => <li data-url={item.url}>{item.name}</li>)}
       </ul>
     </div>
     <div class="screen">
       {
-        MenuList.map((item) => (
-          <div class="content" data-id={item.id.toString()}>
-            <div class="markdown-content">{item.content}</div>
-          </div>
-        ))
+        MenuList.map((item) => {
+          const pageKey = item.url;
+          const PageComponent = components[pageKey];
+
+          return (
+            <div class="content" data-url={item.url}>
+              <div class="markdown-content">
+                {PageComponent && <PageComponent />}
+              </div>
+            </div>
+          );
+        })
       }
     </div>
   </div>
