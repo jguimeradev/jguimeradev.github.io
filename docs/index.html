@@ -1,22 +1,44 @@
-<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.1"><title>Mi sitio personal</title><style>*,*:after,*:before{padding:0;margin:0;box-sizing:border-box}:root{--bg: #0b0f14;--panel: #0f141a;--fg: #e6edf3;--muted: #8b949e;--accent: #58a6ff;--success: #3fb950;--warning: #d29922;--error: #f85149;--cursor: #c9d1d9;--mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Fira Mono", "DejaVu Sans Mono", monospace;--radius: 10px;--shadow: 0 6px 24px rgba(0, 0, 0, .35)}html,body{height:100%;background:linear-gradient(180deg,#0a0d12,#0b0f14 35%,#0b0f14)}body{margin:0;display:grid;place-items:center;padding:24px}.cursor:before{content:"> ";width:35px;height:35px}.content{display:none}.display{display:block}.frame[data-astro-cid-eqg5l7fp]{width:min(960px,96vw);height:min(560px,80vh);display:flex;flex-direction:column;overflow:hidden;background:var(--bg);border:1px solid #11161d;border-radius:var(--radius);box-shadow:var(--shadow);color:var(--success)}.titlebar[data-astro-cid-eqg5l7fp]{display:flex;align-items:center;gap:10px;height:36px;padding:0 12px;background:var(--panel);border-bottom:1px solid #0b1117;user-select:none}.dots[data-astro-cid-eqg5l7fp]{display:flex;gap:8px;margin-right:6px}.dot[data-astro-cid-eqg5l7fp]{width:12px;height:12px;border-radius:50%}.dot[data-astro-cid-eqg5l7fp].red{background:#ff5f56}.dot[data-astro-cid-eqg5l7fp].yellow{background:#ffbd2e}.dot[data-astro-cid-eqg5l7fp].green{background:#27c93f}.title[data-astro-cid-eqg5l7fp]{color:var(--muted);font:500 12px/1 var(--mono);letter-spacing:.2px}.terminal[data-astro-cid-eqg5l7fp]{display:grid;grid-template-columns:1fr 3fr;padding:16px 16px 28px;color:var(--success);font:2rem var(--mono);background:radial-gradient(1200px 400px at 50% 0%,rgba(88,166,255,.06),transparent 60%),var(--bg);height:100%}.menu[data-astro-cid-eqg5l7fp] ul[data-astro-cid-eqg5l7fp] li[data-astro-cid-eqg5l7fp]{padding:5px;list-style-type:none}.menu[data-astro-cid-eqg5l7fp] ul[data-astro-cid-eqg5l7fp]{display:flex;flex-direction:column;justify-content:space-evenly;height:100%}.screen[data-astro-cid-eqg5l7fp]{padding:5px}
-</style></head> <body>  <div class="frame" data-astro-cid-eqg5l7fp> <div class="titlebar" aria-hidden="true" data-astro-cid-eqg5l7fp> <div class="dots" data-astro-cid-eqg5l7fp> <span class="dot red" data-astro-cid-eqg5l7fp></span><span class="dot yellow" data-astro-cid-eqg5l7fp></span><span class="dot green" data-astro-cid-eqg5l7fp></span> </div> <div class="title" data-astro-cid-eqg5l7fp>jguimeram - My personal blog</div> </div> <div class="terminal" data-astro-cid-eqg5l7fp> <div class="menu" data-astro-cid-eqg5l7fp> <ul class="menu-option" data-astro-cid-eqg5l7fp> <li data-id="0" data-astro-cid-eqg5l7fp>Proyectos</li><li data-id="1" data-astro-cid-eqg5l7fp>Blog</li><li data-id="2" data-astro-cid-eqg5l7fp>Snake</li><li data-id="3" data-astro-cid-eqg5l7fp>About Me</li> </ul> </div> <div class="screen" data-astro-cid-eqg5l7fp> <div class="content" data-id="0" data-astro-cid-eqg5l7fp>
-Proyectos Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
-        iste similique mollitia esse praesentium, dolore nesciunt animi eum vel
-        numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
-        recusandae quam!
-</div> <div class="content" data-id="1" data-astro-cid-eqg5l7fp>
-Blog Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis iste
-        similique mollitia esse praesentium, dolore nesciunt animi eum vel
-        numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
-        recusandae quam!
-</div> <div class="content" data-id="2" data-astro-cid-eqg5l7fp>
-Snake Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
-        iste similique mollitia esse praesentium, dolore nesciunt animi eum vel
-        numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
-        recusandae quam!
-</div> <div class="content" data-id="3" data-astro-cid-eqg5l7fp>
-About me Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis
-        iste similique mollitia esse praesentium, dolore nesciunt animi eum vel
-        numquam sunt voluptatem iure minus corrupti? Iste doloribus nobis
-        recusandae quam!
-</div> </div> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{r()});function r(){const t=document.querySelectorAll(".menu-option li"),i=document.querySelectorAll(".content"),o=document.createElement("span");o.classList.add("cursor");let e=0;t[e].insertBefore(o,t[e].firstChild),document.addEventListener("keydown",s=>{if(s.key==="ArrowDown")e++;else if(s.key==="ArrowUp")e--;else if(s.key==="Enter"){const d=t[e].getAttribute("data-id");for(const n of i)n.getAttribute("data-id")===d?(n.classList.remove("content"),n.classList.add("display")):(n.classList.remove("display"),n.classList.add("content"))}e===t.length&&(e=0),e<0&&(e=t.length-1),t[e].insertBefore(o,t[e].firstChild)})}</script>  </body></html>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.14.1"><title>Mi sitio personal</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/assets/ClientRouter.astro_astro_type_script_index_0_lang.B3vRBseb.js"></script><style>*,*:after,*:before{padding:0;margin:0;box-sizing:border-box}:root{--bg: #0b0f14;--panel: #0f141a;--fg: #e6edf3;--muted: #8b949e;--accent: #58a6ff;--success: #3fb950;--warning: #d29922;--error: #f85149;--cursor: #c9d1d9;--mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Fira Mono", "DejaVu Sans Mono", monospace;--radius: 10px;--shadow: 0 6px 24px rgba(0, 0, 0, .35)}html,body{height:100%;background:linear-gradient(180deg,#0a0d12,#0b0f14 35%,#0b0f14)}body{margin:0;display:grid;place-items:center;padding:24px}.cursor:before{content:"> ";width:35px;height:35px}.content{display:none}.display{display:block}.astro-route-announcer{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}.frame[data-astro-cid-eqg5l7fp]{width:min(960px,96vw);height:min(560px,80vh);display:flex;flex-direction:column;overflow:hidden;background:var(--bg);border:1px solid #11161d;border-radius:var(--radius);box-shadow:var(--shadow);color:var(--success)}.titlebar[data-astro-cid-eqg5l7fp]{display:flex;align-items:center;gap:10px;height:36px;padding:0 12px;background:var(--panel);border-bottom:1px solid #0b1117;user-select:none}.dots[data-astro-cid-eqg5l7fp]{display:flex;gap:8px;margin-right:6px}.dot[data-astro-cid-eqg5l7fp]{width:12px;height:12px;border-radius:50%}.dot[data-astro-cid-eqg5l7fp].red{background:#ff5f56}.dot[data-astro-cid-eqg5l7fp].yellow{background:#ffbd2e}.dot[data-astro-cid-eqg5l7fp].green{background:#27c93f}.title[data-astro-cid-eqg5l7fp]{color:var(--muted);font:500 12px/1 var(--mono);letter-spacing:.2px}.terminal[data-astro-cid-eqg5l7fp]{display:grid;grid-template-columns:1fr 3fr;padding:16px 16px 28px;color:var(--success);font:2rem var(--mono);background:radial-gradient(1200px 400px at 50% 0%,rgba(88,166,255,.06),transparent 60%),var(--bg);height:100%}.menu[data-astro-cid-eqg5l7fp] ul[data-astro-cid-eqg5l7fp] li[data-astro-cid-eqg5l7fp]{padding:5px;list-style-type:none}.menu[data-astro-cid-eqg5l7fp] ul[data-astro-cid-eqg5l7fp]{display:flex;flex-direction:column;justify-content:space-evenly;height:100%}.screen[data-astro-cid-eqg5l7fp]{padding:5px;position:relative;overflow-y:auto}.content[data-astro-cid-eqg5l7fp]{display:none;padding:1rem;font-size:1rem;line-height:1.5}.content[data-astro-cid-eqg5l7fp].active{display:block}.markdown-content[data-astro-cid-eqg5l7fp]{white-space:pre-wrap}.markdown-content[data-astro-cid-eqg5l7fp] h1[data-astro-cid-eqg5l7fp],.markdown-content[data-astro-cid-eqg5l7fp] h2[data-astro-cid-eqg5l7fp]{margin:1rem 0;color:var(--accent)}.markdown-content[data-astro-cid-eqg5l7fp] ul[data-astro-cid-eqg5l7fp],.markdown-content[data-astro-cid-eqg5l7fp] ol[data-astro-cid-eqg5l7fp]{padding-left:1.5rem;margin:.5rem 0}.markdown-content[data-astro-cid-eqg5l7fp] li[data-astro-cid-eqg5l7fp]{margin:.25rem 0}.markdown-content[data-astro-cid-eqg5l7fp] p[data-astro-cid-eqg5l7fp]{margin:.5rem 0}
+</style></head> <body>  <div class="frame" } data-astro-cid-eqg5l7fp> <div class="titlebar" aria-hidden="true" data-astro-cid-eqg5l7fp> <div class="dots" data-astro-cid-eqg5l7fp> <span class="dot red" data-astro-cid-eqg5l7fp></span><span class="dot yellow" data-astro-cid-eqg5l7fp></span><span class="dot green" data-astro-cid-eqg5l7fp></span> </div> <div class="title" data-astro-cid-eqg5l7fp>jguimeram - My personal blog</div> </div> <div class="terminal" data-astro-cid-eqg5l7fp> <div class="menu" data-astro-cid-eqg5l7fp> <ul class="menu-option" data-astro-cid-eqg5l7fp> <li data-id="0" data-astro-cid-eqg5l7fp>Proyectos</li><li data-id="1" data-astro-cid-eqg5l7fp>Blog</li><li data-id="2" data-astro-cid-eqg5l7fp>Snake</li><li data-id="3" data-astro-cid-eqg5l7fp>About Me</li> </ul> </div> <div class="screen" data-astro-cid-eqg5l7fp> <div class="content" data-id="0" data-astro-cid-eqg5l7fp> <div class="markdown-content" data-astro-cid-eqg5l7fp># Projects
+
+Here are some of my featured projects:
+
+1. **Portfolio Website**
+   - Built with Astro and TypeScript
+   - Terminal-style interface
+   - Responsive design
+
+2. **Snake Game**
+   - Classic snake game implementation
+   - Built with vanilla JavaScript
+   - Keyboard controls</div> </div><div class="content" data-id="1" data-astro-cid-eqg5l7fp> <div class="markdown-content" data-astro-cid-eqg5l7fp># Latest Blog Posts
+
+## Getting Started with Astro
+Learn how to build blazing-fast websites with Astro...
+
+## TypeScript Best Practices
+Essential TypeScript patterns and practices for better code...
+
+## Web Animation Techniques
+Create smooth and performant web animations...</div> </div><div class="content" data-id="2" data-astro-cid-eqg5l7fp> <div class="markdown-content" data-astro-cid-eqg5l7fp># Snake Game
+
+Use arrow keys to control the snake:
+↑ - Move Up
+↓ - Move Down
+← - Move Left
+→ - Move Right
+
+Collect food to grow longer!
+Avoid hitting the walls or yourself.
+
+Press SPACE to start/pause the game.</div> </div><div class="content" data-id="3" data-astro-cid-eqg5l7fp> <div class="markdown-content" data-astro-cid-eqg5l7fp># About Me
+
+Hi! I&#39;m a full-stack developer passionate about creating 
+engaging web experiences. I specialize in:
+
+- Frontend Development (React, Vue, Astro)
+- Backend Development (Node.js, Python)
+- UI/UX Design
+- Performance Optimization
+
+Feel free to reach out for collaborations!</div> </div> </div> </div> </div>  <script type="module">class n{options;contents;cursor;currentIndex;keydownHandler;constructor(){this.options=Array.from(document.querySelectorAll(".menu-option li")),this.contents=Array.from(document.querySelectorAll(".content")),this.cursor=document.createElement("span"),this.cursor.classList.add("cursor"),this.currentIndex=0,this.keydownHandler=this.handleKeydown.bind(this),this.init()}init(){this.updateCursorPosition(),this.updateContentVisibility(),document.addEventListener("keydown",this.keydownHandler)}handleKeydown(t){switch(t.key){case"ArrowDown":this.moveDown();break;case"ArrowUp":this.moveUp();break;case"Enter":this.selectCurrentOption();break}}moveDown(){this.currentIndex=this.normalizeIndex(this.currentIndex+1),this.updateCursorPosition()}moveUp(){this.currentIndex=this.normalizeIndex(this.currentIndex-1),this.updateCursorPosition()}normalizeIndex(t){return t>=this.options.length?0:t<0?this.options.length-1:t}updateCursorPosition(){this.cursor.parentElement&&this.cursor.parentElement.removeChild(this.cursor),this.options[this.currentIndex].insertBefore(this.cursor,this.options[this.currentIndex].firstChild)}selectCurrentOption(){const t=this.options[this.currentIndex].getAttribute("data-id");this.updateContentVisibility(t)}updateContentVisibility(t="0"){this.contents.forEach(e=>{e.getAttribute("data-id")===t?e.classList.add("active"):e.classList.remove("active")})}destroy(){document.removeEventListener("keydown",this.keydownHandler)}}document.addEventListener("DOMContentLoaded",()=>{new n});</script>  </body></html>
